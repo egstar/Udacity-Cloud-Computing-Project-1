@@ -11,7 +11,16 @@ window.addEventListener('scroll', function() {
 })
 
 window.addEventListener('load', function(){
-    navItems[0].classList.add('nav-active')
+    if(this.location.hash === "#About"){
+        navItems[1].classList.add('nav-active')
+    } else if(this.location.hash === "#Post"){
+        navItems[2].classList.add('nav-active')
+    } else if(this.location.hash === "#Contact"){
+        navItems[3].classList.add('nav-active')
+    } else {
+        navItems[0].classList.add('nav-active')
+    }
+    
     if(window.scrollY > navTab.offsetHeight){
         navBar.style=  'background:rgba(69, 74, 78, .9);color:white;height:2.3rem;'
     } else {

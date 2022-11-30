@@ -1,5 +1,29 @@
-# Udacity's [_ALX-T_] Cloud-Computing
-## Project 1 ( Static Website Deployment)
+# Udacity's [_ALX-T_] Cloud-Computing 
+#### Project 1 ( Static Website Deployment)
+
+
+
+##### 📖 Table of content
+
+```
+┣━ EndPoints Table
+┣━ Deployment steps
+┃   ┣━ IAM Role creation
+┃   ┣━ AWS Cli configuration
+┃   ┣━ S3 Bucket creation
+┃   ┗━ S3 Bucket configuration
+┣━ Addition tasks
+┃   ┣━ CSS Edits
+┃   ┃   ┣━ Changed the main nav background
+┃   ┃   ┣━ Changed the navbar position to fixed
+┃   ┃   ┗━ Changed the Colors / Layout of Home
+┃   ┣━ JS Edits
+┃   ┃   ┣━ Highlight clicked nav buttons
+┃   ┃   ┗━ Changing the navbar color according to scroll position
+┃   ┗━ Added 404 Error page [ error.html ]
+┗━ Screenshots
+```
+
 
 ### Endpoints Table:
 
@@ -37,7 +61,8 @@
           aws s3api create-bucket --bucket _burhamp1_ --region _us-east-1_
           
       > NOTE: Change **burhamp1** with the desired name for your Bucket, and change **us-east-1** with the desired AWS region
-  
+
+#### **S3 Bucket** Configuration
   *  Enable AWS S3 Bucket **Static Website**
   
   		  	aws s3 website s3://burhamp1/ --index-document index.html --error-document error.html
@@ -49,13 +74,81 @@
        OR
        
        **http://`burhamp1`.s3.amazonaws.com**
-          
+  * Set the the Public poicy:
+```
+{
+"Version":"2012-10-17",
+"Statement":[
+ {
+   "Sid":"AddPerm",
+   "Effect":"Allow",
+   "Principal": "*",
+   "Action":["s3:GetObject"],
+   "Resource":["arn:aws:s3:::your-website/*"]
+ }
+]
+}
+```
   * Copy all files to the **AWS S3 Bucket**
 
           - Locate the Main directory of project `cd /`
           - `aws s3 cp --recursive . s3://_burhamp1_ --acl public-read`
           
 ----
+### Addition tasks
+
+#### CSS Edits
+
+  * Changed the main nav background
+  * Changed the navbar position to fixed
+  * Changed the Colors / Layout of Home
 
 
+#### JS Edits
+
+  * Highlight navigation buttons according to current URL or upon Click
+  * Changed the navigation bar attribute to be shrinked at scroll and set opacity to .9
+
+#### Error Page
+
+  * Added 404 Page for all undefined pages.
+
+----
+
+### Screenshots
+
+----
+```
+                                                             [S3 Bucket]
+```
+----
+![s3-5](https://user-images.githubusercontent.com/76433966/204795492-889d5b06-60f6-4d44-ac35-04717c3fc8dc.png)
+
+![s3-4](https://user-images.githubusercontent.com/76433966/204795502-c21e6233-6ee5-4db9-a6aa-d3dc6879192b.png)
+
+![s3-3](https://user-images.githubusercontent.com/76433966/204793936-595fb376-4fb8-4228-bf1a-48fed83f276a.png)
+
+![s3-2](https://user-images.githubusercontent.com/76433966/204793908-f56f6336-14e9-4939-9ff4-0e04c0c66a50.png)
+
+![s3-1](https://user-images.githubusercontent.com/76433966/204793916-f7ead182-1dec-4152-a592-843e97e883f9.png)
+
+----
+
+```
+                                                          [Live Website URL]
+```
+----
+
+![s3-view](https://user-images.githubusercontent.com/76433966/204797745-28c4b2f5-9142-4a63-8b3e-d90c4763807d.png)
+
+![cf-view](https://user-images.githubusercontent.com/76433966/204797729-936fc341-458c-403f-ad02-862681db11cb.png)
+
+
+----
+
+```
+                                                            [Cloudfront]
+```
+----
+![CloudFront](https://user-images.githubusercontent.com/76433966/204793921-9bbdc43d-babd-4a08-bc9a-2d78f812ee13.png)
 
