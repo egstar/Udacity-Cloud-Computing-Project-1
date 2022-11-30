@@ -1,26 +1,24 @@
 # Udacity's [_ALX-T_] Cloud-Computing
-# Project 1 ( Static Website Deployment)
+## Project 1 ( Static Website Deployment)
 
-## Endpoint Table:
+### Endpoints Table:
 
 | EndPoint | URL |
 |:---:| --- |
 | (CloudFront) | [Click here](https://d1qfkxgkfonazs.cloudfront.net/) |
-
 | (AWS S3 Bucket) | [Click here](http://burhamp1.s3-website-us-east-1.amazonaws.com/index.html) |
-
 | (AWS S3 Direct) | [Click here](http://burhamp1.s3.amazonaws.com/index.html) |
 
 ----
 
-## Deployment steps
+### Deployment steps
 
-### **IAM Role** Creation
+#### **IAM Role** Creation
   * Creating new IAM user with (_Programatic Access_) to use with the _AWS CLI_.
   * Added the _Administrator Access_ to the created user.
   
 
-### **AWS Cli** Configuration
+#### **AWS Cli** Configuration
   * Setup the AWS CLI to connect to AWS s3 and copy files from [Here](https://awscli.amazonaws.com/AWSCLIV2.msi)
   * start the AWS configuration by running this command:
   
@@ -33,7 +31,7 @@
     |**AWS_DEFAULT_REGION** | The deisred region to use with AWS services, preferred ( _us-east-1_ ) |
     | **Output** | The data output type preferred to use ( _json_ ) |
   
-### **S3 Bucket** Creation
+#### **S3 Bucket** Creation
   * Using CLI to create the S3 Bucket
 
           aws s3api create-bucket --bucket _burhamp1_ --region _us-east-1_
