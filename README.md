@@ -45,7 +45,9 @@
   * Check that AWS website is running using AWS s3 Bucket/Direct URL 
  
        **http://`burhamp1`.s3-website-`us-east-1`.amazonaws.com**
+       
        OR
+       
        **http://`burhamp1`.s3.amazonaws.com**
           
   * Copy all files to the **AWS S3 Bucket**
