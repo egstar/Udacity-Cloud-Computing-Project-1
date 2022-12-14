@@ -1,4 +1,4 @@
-# Udacity's [_ALX-T_] Cloud-Computing 
+# Udacity's [_ALX-T_] Cloud-Computing ![Project Review](https://img.shields.io/badge/Review-PASSED-greensvg)
 #### Project 1 ( Static Website Deployment)
 
 
